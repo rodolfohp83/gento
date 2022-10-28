@@ -1,0 +1,27 @@
+@media (max-width: 768px) {}
+@media (max-width: 992px) {}
+@media (max-width: 1024px) {}
+@media (min-width: 1200px) {
+    .header {
+        border: solid 1px lime;
+        background-color: grey;
+        .nav {
+            width: calc(75%);
+        }
+    }
+    .hero {
+        .container-hero {
+            .hero-center {
+                .hero-title {
+                    font-size: 3em;
+                    color: red;
+                    span {
+                        &::after {
+                            top: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

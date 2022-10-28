@@ -1,0 +1,78 @@
+.service {
+    .container {
+        display: flex;
+        align-items: center;
+        .item-service {
+            width: 40%;
+            padding: 5% 5% 5% 0 ;
+            &:last-child {
+                width: 60%;
+                height: 300px;
+                background-color: $color_grey;
+                background-color: rgba(26, 172, 221, 0.05);
+                padding: 0;
+                display: grid;
+                place-items: center;
+                border-radius: 50px;
+            }
+            .subtitle {
+                @include subtitle;
+            }
+            .title {
+                @include title;
+            }
+            .text {
+                @include text;
+            }
+            .btn {
+                @include boton;
+            }
+            .service-contenido {
+                display: flex;
+                justify-content: center;
+                width: 95%;
+                .service-contenido-item {
+                    background-color: #fff;
+                    padding: 15px;
+                    max-width: 200px;
+                    text-align: center;
+                    border-radius: 20px;
+                    filter: grayscale(1);
+                    transform: scale(0.7);
+                    opacity: 0.7;
+                    transition: 0.5s ease-in-out;
+                    border: solid 1px $color_blue;
+                    img {
+                        width: 70px;
+                    }
+                    .service-contenido-text {
+                        font-size: 14px;
+                        .title {
+                            font-size: 18px;
+                            margin: 15px 0;
+                        }
+                        .btn {
+                            opacity: 0.3;
+                            border: solid 2px ;
+                            background-color: transparent;
+                            color: #333;
+                        }
+                    }
+                    &:hover {
+                        box-shadow: 0 10px 35px rgba(212,233,241,100);
+                        opacity: 1;
+                        transform: scale(1);
+                        filter: grayscale(0);
+                        transition: 0.5s ease-in-out;
+                        .btn {
+                            border: 0;
+                            color: #fff;
+                            opacity: 1;
+                            background-color: $color_blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

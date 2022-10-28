@@ -1,0 +1,38 @@
+
+
+$color_blue: #1AABDD;
+$color_black: #1A171B;
+$color_grey: #FAF9FE;
+
+@mixin boton {
+    background-color: $color_blue;
+    padding: 10px 25px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: 0.5s ease-in-out;
+    &:hover {
+        transition: 0.5s ease-in-out;
+            background-color: #106f8f;
+    }
+}
+
+@mixin title {
+    font-size: 1.8em;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin-bottom: 25px;
+
+}
+
+@mixin subtitle {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: $color_blue;
+}
+
+@mixin text {
+    font-size: 1em;
+    margin-bottom: 20px;
+    line-height: 18px;
+}
