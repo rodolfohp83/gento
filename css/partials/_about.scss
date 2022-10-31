@@ -35,7 +35,7 @@
     &::after {
         content: '';
         position: absolute;
-        background-color: $color_grey;
+        background-color: rgba(26, 172, 221, 0.05);
         width: 500px;
         height: 500px;
         border-radius: 50%;

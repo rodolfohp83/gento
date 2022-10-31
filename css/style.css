@@ -58,6 +58,8 @@ body a:hover {
   display: flex;
   padding: 20px;
   z-index: 20;
+  position: fixed;
+  width: 100%;
 }
 .header .logo {
   width: 150px;
@@ -65,14 +67,28 @@ body a:hover {
 .header .nav {
   display: flex;
   justify-content: center;
-  width: 75%;
+  width: 84%;
 }
 .header .nav .item_nav {
   padding: 0 15px;
+  line-height: 30px;
 }
 .header .nav .item_nav:hover {
   font-weight: bold;
   color: #1AABDD;
+}
+
+.activo {
+  background-color: #ffffff;
+  margin-top: -40px;
+  box-shadow: 0 10px 35px rgb(212, 233, 241);
+}
+.activo .logo {
+  width: 120px;
+}
+.activo .nav {
+  justify-content: right;
+  width: 100%;
 }
 
 .hero {
@@ -82,8 +98,8 @@ body a:hover {
   display: flex;
   justify-content: space-between;
 }
-.hero .container-hero .hero-left, .hero .container-hero .hero-center, .hero .container-hero .hero-right {
-  width: 33%;
+.hero .container-hero .hero-left, .hero .container-hero .hero-right {
+  width: 30%;
 }
 .hero .container-hero .hero-left {
   display: flex;
@@ -104,7 +120,7 @@ body a:hover {
   position: absolute;
   right: 10vh;
   bottom: 10vh;
-  background-color: #1A171B;
+  background-color: #1AABDD;
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -112,17 +128,19 @@ body a:hover {
 .hero .container-hero .hero-left img {
   width: 70%;
   padding: 20px;
+  margin-top: 10vh;
 }
 .hero .container-hero .hero-center {
   font-weight: 700;
   text-align: center;
-  margin-top: 30vh;
+  margin-top: 25vh;
 }
 .hero .container-hero .hero-center .hero-title {
   font-weight: bold;
   margin-bottom: 50px;
   font-size: 2.5em;
-  color: blue;
+  width: 100%;
+  text-align: center;
 }
 .hero .container-hero .hero-center .hero-title span {
   position: relative;
@@ -137,7 +155,7 @@ body a:hover {
   background-image: url("../img/subrayado.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  top: 50px;
+  top: 70px;
   left: 0;
 }
 .hero .container-hero .hero-center .btn {
@@ -147,6 +165,7 @@ body a:hover {
   font-weight: 700;
   border-radius: 50px;
   transition: 0.5s ease-in-out;
+  bottom: 10vh;
 }
 .hero .container-hero .hero-center .btn:hover {
   transition: 0.5s ease-in-out;
@@ -232,7 +251,7 @@ body a:hover {
 .about::after {
   content: "";
   position: absolute;
-  background-color: #FAF9FE;
+  background-color: rgba(26, 172, 221, 0.05);
   width: 500px;
   height: 500px;
   border-radius: 50%;
@@ -462,24 +481,136 @@ body a:hover {
 .footer-bottom {
   color: #fff;
   background-color: #1A171B;
-  padding: 5px;
+  padding: 7px;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
 }
 
-@media (min-width: 1200px) {
-  .header {
-    border: solid 1px lime;
-    background-color: grey;
+@media only screen and (min-width: 1200px) {
+  .hero .container-hero .hero-center .hero-title {
+    font-size: 3.1em;
   }
+  .hero .container-hero .hero-center .hero-title span::after {
+    top: 70px;
+  }
+}
+@media only screen and (max-width: 1024px) {
   .header .nav {
     width: 75%;
   }
   .hero .container-hero .hero-center .hero-title {
-    font-size: 3em;
-    color: red;
+    font-size: 2.5em;
   }
   .hero .container-hero .hero-center .hero-title span::after {
-    top: 100px;
+    top: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    justify-content: center;
+  }
+  .header .nav {
+    display: none;
+  }
+  .hero .container-hero {
+    flex-direction: column;
+  }
+  .hero .container-hero .hero-left {
+    display: none;
+  }
+  .hero .container-hero .hero-center {
+    margin-top: 10vh;
+  }
+  .hero .container-hero .hero-center .hero-title {
+    font-size: 2.1em;
+  }
+  .hero .container-hero .hero-right {
+    width: 100%;
+    right: 0;
+    margin-top: 0;
+  }
+  .hero .container-hero .hero-right img {
+    position: inherit;
+  }
+  .hero .container-hero .hero-right::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 10vh;
+    background-color: #1AABDD;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+  }
+  .about {
+    flex-direction: column;
+    padding: 120px 0 0 0;
+  }
+  .about .item-about {
+    width: 100%;
+  }
+  .about .item-about .text-about {
+    padding: 10% 15px;
+  }
+  .about .item-about .about-circle {
+    width: 50px;
+    bottom: -40px;
+  }
+  .about .item-about .about-path {
+    width: 60px;
+    top: 10px;
+    right: 10px;
+  }
+  .about::after {
+    display: none;
+  }
+  .service .container {
+    flex-direction: column;
+    padding: 0;
+  }
+  .service .container .item-service {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .service .container .item-service:last-child {
+    width: 100%;
+    border-radius: 0px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .service .container .item-service .service-contenido {
+    flex-direction: column;
+  }
+  .service .container .item-service .service-contenido .service-contenido-item {
+    max-width: inherit;
+  }
+  .clientes .container {
+    flex-direction: column;
+  }
+  .clientes .container .clientes-item {
+    width: 100%;
+  }
+  .clientes::before {
+    width: 50px;
+    height: 200px;
+  }
+  .footer {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+  .footer .footer-item {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .footer .footer-item .ftr-cont {
+    flex-direction: column;
+  }
+  .footer .footer-item .ftr-cont .ftr-sub-item {
+    margin-bottom: 30px;
+  }
+  .footer .footer-item:last-child {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

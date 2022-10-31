@@ -3,8 +3,8 @@
     .container-hero {
         display: flex;
         justify-content: space-between;
-        .hero-left, .hero-center, .hero-right {
-            width: 33%;
+        .hero-left, .hero-right {
+            width: 30%;
         }
         .hero-left {
             display: flex;
@@ -24,7 +24,7 @@
                 position: absolute;
                 right: 10vh;
                 bottom: 10vh;
-                background-color: $color_black;
+                background-color: $color_blue;
                 border-radius: 50%;
                 width: 80px;
                 height: 80px;
@@ -32,17 +32,19 @@
             img {
                 width: 70%;
                 padding: 20px;
+                margin-top: 10vh;
             }
         }
         .hero-center {
             font-weight: 700;
             text-align: center;
-            margin-top: 30vh;
+            margin-top: 25vh;
             .hero-title {
                 font-weight: bold;
                 margin-bottom: 50px;
-                font-size: 2.5em ;
-                color: blue;
+                font-size: 2.5em;
+                width: 100%;
+                text-align: center;
                 span {
                     position: relative;
                     width: 40%;
@@ -55,13 +57,14 @@
                         background-image: url('../img/subrayado.svg');
                         background-size: contain;
                         background-repeat: no-repeat;
-                        top: 50px;
+                        top: 70px;
                         left: 0;
                     }
                 }
             }
             .btn {
                 @include boton;
+                bottom: 10vh;
             }
         }
         .hero-right {
